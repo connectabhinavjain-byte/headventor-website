@@ -1,4 +1,4 @@
-/* ===============================
+/* =============================== 
    ROOT VARIABLES
 ================================= */
 
@@ -39,9 +39,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    position: absolute;
+    position: fixed;                 /* Changed from absolute */
     width: 100%;
-    z-index: 10;
+    top: 0;
+    left: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 nav a {
@@ -61,27 +65,29 @@ nav a:hover {
 ================================= */
 
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 100px;             /* Push content below fixed nav */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
 }
 
 /* Tagline */
 .hero-tagline {
     font-weight: 300;
-    letter-spacing: 5px;
-    font-size: 2.8rem;
+    letter-spacing: 4px;
+    font-size: 2.6rem;
     margin-bottom: 20px;
 }
 
 /* Subline */
 .hero-sub {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     max-width: 700px;
     margin-bottom: 40px;
@@ -112,7 +118,7 @@ nav a:hover {
 ================================= */
 
 .section {
-    padding: 100px 8%;
+    padding: 120px 8%;
 }
 
 .section h2 {
@@ -123,20 +129,20 @@ nav a:hover {
 .section p {
     max-width: 800px;
     color: var(--text-muted);
+    font-size: 1.05rem;
 }
 
 /* ===============================
-   DARK OVERLAY SECTION (CTA FIX)
+   DARK CTA SECTION
 ================================= */
 
 .section-dark {
     position: relative;
-    padding: 100px 20px;
+    padding: 120px 20px;
     text-align: center;
     background: linear-gradient(135deg, var(--secondary-bg), var(--primary-bg));
 }
 
-/* Overlay */
 .section-dark::before {
     content: "";
     position: absolute;
@@ -145,13 +151,11 @@ nav a:hover {
     z-index: 0;
 }
 
-/* Keep content above overlay */
 .section-dark * {
     position: relative;
     z-index: 1;
 }
 
-/* CTA text */
 .cta-text {
     font-size: 1.3rem;
     font-weight: 500;
@@ -196,28 +200,28 @@ footer {
 
 @media (max-width: 768px) {
 
-    .hero-tagline {
-        font-size: 2rem;
-        letter-spacing: 3px;
-    }
-
-    .hero-sub {
-        font-size: 1rem;
-    }
-
     nav {
-        padding: 20px;
+        padding: 15px 20px;
     }
 
     nav a {
         margin-left: 15px;
     }
 
+    .hero-tagline {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-sub {
+        font-size: 1rem;
+    }
+
     .section {
-        padding: 70px 20px;
+        padding: 80px 20px;
     }
 
     .section-dark {
-        padding: 70px 20px;
+        padding: 80px 20px;
     }
 }
