@@ -213,3 +213,68 @@ footer {
   font-size: 14px;
 }
 
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    width: 92%;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  /* Stack grids */
+  .grid {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  /* Stack steps */
+  .steps {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .steps div {
+    width: 100%;
+  }
+
+  /* Adjust hero padding */
+  .hero {
+    padding: 120px 0;
+  }
+
+  /* Adjust section spacing */
+  .section,
+  .cta {
+    padding: 80px 0;
+  }
+
+  /* Navigation */
+  .nav-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    margin: 0 10px;
+  }
+}
+
+
