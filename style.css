@@ -200,6 +200,10 @@ p { font-size: 17px; color: var(--medium-gray); }
   text-align: center;
 }
 
+.cta p {
+  color: white;
+}
+
 /* FOOTER */
 footer {
   background: var(--deep-purple);
@@ -208,3 +212,4 @@ footer {
   padding: 25px;
   font-size: 14px;
 }
+
