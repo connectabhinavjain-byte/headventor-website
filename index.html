@@ -9,6 +9,49 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
+<style>
+  /* Only the logo-specific styles - keeps your original CSS intact */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-mark {
+    transition: filter 0.3s ease;
+  }
+
+  .logo-mark:hover {
+    filter: drop-shadow(0 0 20px rgba(255,184,0,0.3));
+  }
+
+  .hero-mark-container {
+    margin-bottom: 40px;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-mark {
+    filter: drop-shadow(0 0 40px rgba(255,184,0,0.2));
+    transition: filter 0.4s ease;
+  }
+
+  .hero-mark:hover {
+    filter: drop-shadow(0 0 60px rgba(255,184,0,0.35));
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+  }
+</style>
+
 </head>
 
 <body>
@@ -17,6 +60,19 @@
 <nav class="navbar">
   <div class="container nav-content">
     <div class="logo">
+      <!-- 48px mark with black H -->
+      <svg width="40" height="40" viewBox="0 0 140 140" fill="none" class="logo-mark">
+        <!-- Hexagon outline -->
+        <path d="M70 18 L116 44.5 L116 97.5 L70 124 L24 97.5 L24 44.5 Z" stroke="#FFB800" stroke-width="2.5" fill="none"/>
+        <!-- H left vertical - BLACK -->
+        <line x1="48" y1="44" x2="48" y2="96" stroke="#09090F" stroke-width="9" stroke-linecap="round"/>
+        <!-- H right vertical - BLACK -->
+        <line x1="92" y1="44" x2="92" y2="96" stroke="#09090F" stroke-width="9" stroke-linecap="round"/>
+        <!-- H crossbar with arrow - GOLD -->
+        <line x1="48" y1="70" x2="86" y2="70" stroke="#FFB800" stroke-width="9" stroke-linecap="round"/>
+        <!-- Arrow head - GOLD -->
+        <path d="M80 58 L92 70 L80 82" stroke="#FFB800" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
       <span class="logo-text">Headventor</span>
     </div>
     <div class="nav-links">
@@ -34,6 +90,27 @@
   <div class="floating-shape shape2"></div>
 
   <div class="container hero-content">
+    <!-- 96px mark with black H (as requested) -->
+    <div class="hero-mark-container">
+      <svg width="96" height="96" viewBox="0 0 140 140" fill="none" class="hero-mark">
+        <!-- Outer hex ring (thin) for detail -->
+        <path d="M70 8 L124 39 L124 101 L70 132 L16 101 L16 39 Z" stroke="#FFB800" stroke-width="1" fill="none" opacity="0.25"/>
+        <!-- Main hex -->
+        <path d="M70 18 L116 44.5 L116 97.5 L70 124 L24 97.5 L24 44.5 Z" stroke="#FFB800" stroke-width="2.5" fill="none"/>
+        <!-- H left vertical - BLACK -->
+        <line x1="48" y1="44" x2="48" y2="96" stroke="#09090F" stroke-width="9" stroke-linecap="round"/>
+        <!-- H right vertical - BLACK -->
+        <line x1="92" y1="44" x2="92" y2="96" stroke="#09090F" stroke-width="9" stroke-linecap="round"/>
+        <!-- H crossbar with arrow - GOLD -->
+        <line x1="48" y1="70" x2="86" y2="70" stroke="#FFB800" stroke-width="9" stroke-linecap="round"/>
+        <!-- Arrow head - GOLD -->
+        <path d="M80 58 L92 70 L80 82" stroke="#FFB800" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <!-- Corner accent dots (optional) -->
+        <circle cx="70" cy="8" r="2.5" fill="#FFB800" opacity="0.4"/>
+        <circle cx="70" cy="132" r="2.5" fill="#FFB800" opacity="0.4"/>
+      </svg>
+    </div>
+    
     <h1>
       Inspire · Innovate · Impact
     </h1>
@@ -157,7 +234,7 @@
   <div class="container">
     <h2>Partner in Digital Delivery</h2>
     <p>
-     Let’s talk if you're exploring extended teams, managed digital initiatives, or building a Global Capability Center.
+     Let's talk if you're exploring extended teams, managed digital initiatives, or building a Global Capability Center.
     </p>
     <a href="mailto:info@headventor.com" class="btn-secondary">
       Partner With Us
@@ -166,10 +243,21 @@
 </section>
 
 <footer>
-  © 2026 Headventor
+  <div class="footer-content">
+    <div class="footer-logo">
+      <!-- Footer mark with black H -->
+      <svg width="32" height="32" viewBox="0 0 140 140" fill="none">
+        <path d="M70 18 L116 44.5 L116 97.5 L70 124 L24 97.5 L24 44.5 Z" stroke="#FFB800" stroke-width="2.5" fill="none"/>
+        <line x1="48" y1="44" x2="48" y2="96" stroke="#09090F" stroke-width="9" stroke-linecap="round"/>
+        <line x1="92" y1="44" x2="92" y2="96" stroke="#09090F" stroke-width="9" stroke-linecap="round"/>
+        <line x1="48" y1="70" x2="86" y2="70" stroke="#FFB800" stroke-width="9" stroke-linecap="round"/>
+        <path d="M80 58 L92 70 L80 82" stroke="#FFB800" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <span>Headventor</span>
+    </div>
+    <div>© 2026 Headventor. All rights reserved.</div>
+  </div>
 </footer>
 
 </body>
 </html>
-
-
