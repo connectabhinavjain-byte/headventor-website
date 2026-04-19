@@ -1,120 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Headventor | Digital Delivery Partner</title>
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-<meta name="theme-color" content="#09090F">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../HV/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../HV/favicon-16x16.png">
+<link rel="shortcut icon" href="../HV/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="../HV/apple-touch-icon.png">
+<meta name="theme-color" content="#07070E">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+<body class="is-loading">
 
-<body>
+<!-- ░░ SCROLL PROGRESS ░░ -->
+<div id="scroll-progress" class="scroll-progress"></div>
 
-<!-- NAVIGATION -->
-<nav class="navbar">
-  <div class="container nav-content">
-    <div class="logo">
-      <svg width="36" height="36" viewBox="0 0 140 140" fill="none" class="logo-mark">
-        <path d="M70 18 L116 44.5 L116 97.5 L70 124 L24 97.5 L24 44.5 Z" stroke="#FFB800" stroke-width="2.5" fill="none"/>
-        <line x1="48" y1="44" x2="48" y2="96" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
-        <line x1="92" y1="44" x2="92" y2="96" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
-        <line x1="48" y1="70" x2="86" y2="70" stroke="#FFB800" stroke-width="9" stroke-linecap="round"/>
-        <path d="M80 58 L92 70 L80 82" stroke="#FFB800" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </svg>
-      <span class="logo-text">headventor<span class="logo-dot"></span></span>
-    </div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#gcc">GCC</a>
-      <a href="#contact">Contact</a>
-    </div>
+<!-- ░░ LOADER ░░ -->
+<div id="loader" class="loader">
+  <div class="loader-content">
+    <svg width="44" height="44" viewBox="0 0 140 140" fill="none" class="loader-mark">
+      <path d="M70 18 L116 44.5 L116 97.5 L70 124 L24 97.5 L24 44.5 Z" stroke="#FFB800" stroke-width="2.5" fill="none"/>
+      <line x1="48" y1="44" x2="48" y2="96" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+      <line x1="92" y1="44" x2="92" y2="96" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+      <line x1="48" y1="70" x2="86" y2="70" stroke="#FFB800" stroke-width="9" stroke-linecap="round"/>
+      <path d="M80 58 L92 70 L80 82" stroke="#FFB800" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <div class="loader-track"><div class="loader-fill" id="loader-fill"></div></div>
+    <span class="loader-label">Loading</span>
   </div>
+</div>
+
+<!-- ░░ NAV ░░ -->
+<nav id="nav" class="nav">
+  <a href="#" class="nav-brand">
+    <svg width="30" height="30" viewBox="0 0 140 140" fill="none">
+      <path d="M70 18 L116 44.5 L116 97.5 L70 124 L24 97.5 L24 44.5 Z" stroke="#FFB800" stroke-width="2.5" fill="none"/>
+      <line x1="48" y1="44" x2="48" y2="96" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+      <line x1="92" y1="44" x2="92" y2="96" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+      <line x1="48" y1="70" x2="86" y2="70" stroke="#FFB800" stroke-width="9" stroke-linecap="round"/>
+      <path d="M80 58 L92 70 L80 82" stroke="#FFB800" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <span class="brand-word">headventor<span class="brand-dot"></span></span>
+  </a>
+  <ul class="nav-menu" id="nav-menu">
+    <li><a href="#about"    class="nav-lnk">About</a></li>
+    <li><a href="#services" class="nav-lnk">Services</a></li>
+    <li><a href="#gcc"      class="nav-lnk">GCC</a></li>
+    <li><a href="#contact"  class="nav-lnk">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-pill">Get in touch</a>
+  <button id="burger" class="burger" aria-label="Menu">
+    <span></span><span></span>
+  </button>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="container hero-content">
-    <div class="hero-mark-container">
-      <svg width="96" height="96" viewBox="0 0 140 140" fill="none" class="hero-mark">
-        <path d="M70 8 L124 39 L124 101 L70 132 L16 101 L16 39 Z" stroke="#FFB800" stroke-width="1" fill="none" opacity="0.2"/>
-        <path d="M70 18 L116 44.5 L116 97.5 L70 124 L24 97.5 L24 44.5 Z" stroke="#FFB800" stroke-width="2.5" fill="none"/>
-        <line x1="48" y1="44" x2="48" y2="96" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
-        <line x1="92" y1="44" x2="92" y2="96" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
-        <line x1="48" y1="70" x2="86" y2="70" stroke="#FFB800" stroke-width="9" stroke-linecap="round"/>
-        <path d="M80 58 L92 70 L80 82" stroke="#FFB800" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="70" cy="8" r="2.5" fill="#FFB800" opacity="0.4"/>
-        <circle cx="70" cy="132" r="2.5" fill="#FFB800" opacity="0.4"/>
-      </svg>
-      <p class="hero-tagline">invent what's next</p>
-    </div>
-    <h1>Inspire · Innovate · Impact</h1>
-    <p>
+<!-- ░░ MOBILE OVERLAY ░░ -->
+<div id="mob-overlay" class="mob-overlay">
+  <div class="mob-links">
+    <a href="#about"    class="mob-lnk" data-index="01">About</a>
+    <a href="#services" class="mob-lnk" data-index="02">Services</a>
+    <a href="#gcc"      class="mob-lnk" data-index="03">GCC</a>
+    <a href="#contact"  class="mob-lnk" data-index="04">Contact</a>
+  </div>
+  <div class="mob-foot">
+    <a href="mailto:info@headventor.com">info@headventor.com</a>
+  </div>
+</div>
+
+<!-- ░░ HERO ░░ -->
+<section class="hero" id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">
+      <span class="eyebrow-bar"></span>
+      <span id="tw-el"></span><span class="tw-cursor">_</span>
+    </p>
+    <h1 class="hero-h1">
+      <span class="h1-word">Inspire</span><span class="h1-sep"> · </span><span class="h1-word">Innovate</span><span class="h1-sep"> · </span><span class="h1-word">Impact</span>
+    </h1>
+    <p class="hero-body">
       Headventor partners with organizations to build scalable capability centers,
       provide extended digital teams, and deliver managed transformation programs
       that strengthen performance and accelerate growth.
     </p>
-    <a href="#contact" class="btn-primary">Explore Partnership</a>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-gold" data-magnetic>
+        <span class="btn-label">Explore Partnership</span>
+        <span class="btn-hover-bg"></span>
+      </a>
+      <a href="#about" class="btn-ghost-link">
+        Learn more
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
   </div>
-</header>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <h2>Building Scalable Enterprise Capability</h2>
-    <p>
-      We combine strategic advisory with execution capability —
-      enabling organizations to establish digital centers,
-      augment teams with specialized talent,
-      and deliver structured transformation initiatives.
-    </p>
+  <div class="hero-scroll">
+    <span class="hs-label">scroll</span>
+    <div class="hs-track"><div class="hs-thumb"></div></div>
   </div>
+  <div class="hero-ghost" aria-hidden="true">HEADVENTOR</div>
 </section>
 
-<!-- SERVICES SECTION -->
-<section id="services" class="section alt">
-  <div class="container">
-    <h2>Delivery &amp; Engagement Models</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Extended Resource Model</h3>
-        <p>Dedicated digital and analytics professionals embedded within client teams to extend capability and accelerate delivery.</p>
+<!-- ░░ MARQUEE ░░ -->
+<div class="marquee-wrap">
+  <div class="marquee-row">
+    <span>Digital Delivery</span><em>✦</em>
+    <span>GCC-as-a-Service</span><em>✦</em>
+    <span>Extended Resource Model</span><em>✦</em>
+    <span>Strategic Advisory</span><em>✦</em>
+    <span>Managed Projects</span><em>✦</em>
+    <span>Capability Build</span><em>✦</em>
+    <span>Scale &amp; Optimize</span><em>✦</em>
+    <span>Digital Delivery</span><em>✦</em>
+    <span>GCC-as-a-Service</span><em>✦</em>
+    <span>Extended Resource Model</span><em>✦</em>
+    <span>Strategic Advisory</span><em>✦</em>
+    <span>Managed Projects</span><em>✦</em>
+    <span>Capability Build</span><em>✦</em>
+    <span>Scale &amp; Optimize</span><em>✦</em>
+  </div>
+</div>
+
+<!-- ░░ ABOUT ░░ -->
+<section id="about" class="sec about-sec">
+  <div class="wrap">
+    <div class="sec-tag">
+      <span class="st-num">01</span>
+      <span class="st-rule"></span>
+      <span class="st-name">About</span>
+    </div>
+    <div class="about-split">
+      <div class="about-left">
+        <h2>Building Scalable<br>Enterprise<br>Capability</h2>
       </div>
-      <div class="card">
-        <h3>Managed Projects</h3>
-        <p>Outcome-focused project ownership with structured planning, execution, and delivery accountability.</p>
-      </div>
-      <div class="card">
-        <h3>Strategic Advisory</h3>
-        <p>Modernization roadmaps aligned to business priorities, capability expansion, and digital acceleration.</p>
+      <div class="about-right">
+        <p class="lead-text">We combine strategic advisory with execution capability — enabling organizations to establish digital centers, augment teams with specialized talent, and deliver structured transformation initiatives.</p>
+        <a href="#services" class="arrow-lnk">
+          Explore our services
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GCC SECTION -->
-<section id="gcc" class="section">
-  <div class="container">
-    <h2>GCC-as-a-Service</h2>
-    <p>
-      End-to-end support for establishing and scaling Global Capability Centers
-      across digital, analytics, technology, and operational functions.
-    </p>
-    <div class="grid">
-      <div class="card">
+<!-- ░░ PLACEHOLDER — METRICS ░░ -->
+<div class="metrics-band">
+  <div class="wrap">
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <span class="metric-val">[ — ]</span>
+        <span class="metric-name">Enterprise Engagements</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-val">[ — ]</span>
+        <span class="metric-name">Countries Served</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-val">[ — ]</span>
+        <span class="metric-name">Professionals Deployed</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-val">[ — ]</span>
+        <span class="metric-name">Years of Expertise</span>
+      </div>
+    </div>
+    <p class="placeholder-note">— placeholder: replace values above with real metrics</p>
+  </div>
+</div>
+
+<!-- ░░ SERVICES ░░ -->
+<section id="services" class="sec services-sec">
+  <div class="wrap">
+    <div class="sec-tag">
+      <span class="st-num">02</span>
+      <span class="st-rule"></span>
+      <span class="st-name">Services</span>
+    </div>
+    <h2 class="sec-h2">Delivery &amp;<br>Engagement Models</h2>
+    <div class="svc-list">
+      <div class="svc-row">
+        <span class="svc-n">01</span>
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="18" cy="8" r="2.5"/><path d="M21 21v-1.5a3.5 3.5 0 0 0-2.5-3.36"/></svg>
+        </div>
+        <div class="svc-text">
+          <h3>Extended Resource Model</h3>
+          <p>Dedicated digital and analytics professionals embedded within client teams to extend capability and accelerate delivery.</p>
+        </div>
+        <span class="svc-arr">↗</span>
+      </div>
+      <div class="svc-row">
+        <span class="svc-n">02</span>
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="svc-text">
+          <h3>Managed Projects</h3>
+          <p>Outcome-focused project ownership with structured planning, execution, and delivery accountability.</p>
+        </div>
+        <span class="svc-arr">↗</span>
+      </div>
+      <div class="svc-row">
+        <span class="svc-n">03</span>
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <div class="svc-text">
+          <h3>Strategic Advisory</h3>
+          <p>Modernization roadmaps aligned to business priorities, capability expansion, and digital acceleration.</p>
+        </div>
+        <span class="svc-arr">↗</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ GCC ░░ -->
+<section id="gcc" class="sec gcc-sec">
+  <div class="wrap">
+    <div class="sec-tag">
+      <span class="st-num">03</span>
+      <span class="st-rule"></span>
+      <span class="st-name">GCC</span>
+    </div>
+    <div class="gcc-head">
+      <h2 class="sec-h2">GCC-as-a-Service</h2>
+      <p>End-to-end support for establishing and scaling Global Capability Centers across digital, analytics, technology, and operational functions.</p>
+    </div>
+    <div class="gcc-grid">
+      <div class="gcc-card">
+        <div class="gcc-card-head">
+          <span class="gcc-n">01</span>
+          <div class="gcc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          </div>
+        </div>
         <h3>Setup &amp; Operating Model</h3>
         <p>GCC structure design, governance framework, transition planning, and capability blueprint.</p>
       </div>
-      <div class="card">
+      <div class="gcc-card">
+        <div class="gcc-card-head">
+          <span class="gcc-n">02</span>
+          <div class="gcc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+        </div>
         <h3>Capability Build</h3>
         <p>Talent acquisition, digital infrastructure, process design, and delivery frameworks.</p>
       </div>
-      <div class="card">
+      <div class="gcc-card">
+        <div class="gcc-card-head">
+          <span class="gcc-n">03</span>
+          <div class="gcc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+        </div>
         <h3>Scale &amp; Optimize</h3>
         <p>Performance management, maturity evolution, and long-term value realization.</p>
       </div>
@@ -122,43 +265,128 @@
   </div>
 </section>
 
-<!-- APPROACH -->
-<section class="section alt">
-  <div class="container">
-    <h2>Our Approach</h2>
-    <div class="steps">
-      <div><strong>Assess</strong><p>Understand objectives</p></div>
-      <div><strong>Design</strong><p>Define structure &amp; scope</p></div>
-      <div><strong>Deliver</strong><p>Execute with accountability</p></div>
-      <div><strong>Scale</strong><p>Embed &amp; optimize</p></div>
+<!-- ░░ APPROACH ░░ -->
+<section class="sec approach-sec">
+  <div class="wrap">
+    <div class="sec-tag">
+      <span class="st-num">04</span>
+      <span class="st-rule"></span>
+      <span class="st-name">Approach</span>
+    </div>
+    <h2 class="sec-h2">Our Approach</h2>
+    <div class="approach-grid">
+      <div class="ap-step">
+        <div class="ap-bubble">01</div>
+        <strong>Assess</strong>
+        <p>Understand objectives</p>
+      </div>
+      <div class="ap-step">
+        <div class="ap-bubble">02</div>
+        <strong>Design</strong>
+        <p>Define structure &amp; scope</p>
+      </div>
+      <div class="ap-step">
+        <div class="ap-bubble">03</div>
+        <strong>Deliver</strong>
+        <p>Execute with accountability</p>
+      </div>
+      <div class="ap-step">
+        <div class="ap-bubble">04</div>
+        <strong>Scale</strong>
+        <p>Embed &amp; optimize</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section id="contact" class="cta">
-  <div class="container">
-    <h2>Partner in Digital Delivery</h2>
-    <p>Let's talk if you're exploring extended teams, managed digital initiatives, or building a Global Capability Center.</p>
-    <a href="mailto:info@headventor.com" class="btn-secondary">Partner With Us</a>
+<!-- ░░ PLACEHOLDER — TESTIMONIAL ░░ -->
+<div class="testimonial-band">
+  <div class="wrap">
+    <div class="testi-card">
+      <span class="testi-quote">❝</span>
+      <p class="testi-text">[ Client testimonial — add a quote from a partner or enterprise client here to build trust and social proof ]</p>
+      <div class="testi-author">
+        <div class="testi-avatar"></div>
+        <div class="testi-meta">
+          <strong>[ Client Name ]</strong>
+          <span>[ Title, Company ]</span>
+        </div>
+      </div>
+    </div>
+    <p class="placeholder-note">— placeholder: replace with a real client quote</p>
   </div>
+</div>
+
+<!-- ░░ CTA / CONTACT ░░ -->
+<section id="contact" class="cta-sec">
+  <div class="cta-inner wrap">
+
+    <div class="cta-left">
+      <p class="cta-over">Ready to partner?</p>
+      <h2>Partner in<br>Digital Delivery</h2>
+      <p class="cta-body">Let's talk if you're exploring extended teams, managed digital initiatives, or building a Global Capability Center.</p>
+      <p class="cta-email">or write directly:<br><a href="mailto:info@headventor.com">info@headventor.com</a></p>
+    </div>
+
+    <div class="cta-right">
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID from formspree.io -->
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-name">Name</label>
+            <input id="f-name" type="text" name="name" placeholder="Your name" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="f-company">Company</label>
+            <input id="f-company" type="text" name="company" placeholder="Your company" autocomplete="organization">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="f-email">Email</label>
+          <input id="f-email" type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="Tell us about your initiative..." required></textarea>
+        </div>
+        <button type="submit" class="btn-gold form-submit" id="form-btn">
+          <span class="btn-label" id="form-btn-label">Send Message</span>
+          <span class="btn-hover-bg"></span>
+        </button>
+        <div id="form-status" class="form-status" aria-live="polite"></div>
+      </form>
+    </div>
+
+  </div>
+  <div class="cta-ghost" aria-hidden="true">PARTNER</div>
 </section>
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-logo">
-      <svg width="28" height="28" viewBox="0 0 140 140" fill="none">
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+  <div class="footer-inner wrap">
+    <div class="footer-brand">
+      <svg width="26" height="26" viewBox="0 0 140 140" fill="none">
         <path d="M70 18 L116 44.5 L116 97.5 L70 124 L24 97.5 L24 44.5 Z" stroke="#FFB800" stroke-width="2.5" fill="none"/>
-        <line x1="48" y1="44" x2="48" y2="96" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
-        <line x1="92" y1="44" x2="92" y2="96" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+        <line x1="48" y1="44" x2="48" y2="96" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+        <line x1="92" y1="44" x2="92" y2="96" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
         <line x1="48" y1="70" x2="86" y2="70" stroke="#FFB800" stroke-width="9" stroke-linecap="round"/>
         <path d="M80 58 L92 70 L80 82" stroke="#FFB800" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
-      <span style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;letter-spacing:-0.03em;color:var(--white);">headventor<span class="logo-dot"></span></span>
+      <span class="footer-word">headventor<span class="brand-dot"></span></span>
     </div>
-    <div>&copy; Headventor Innovations. All rights reserved.</div>
+    <nav class="footer-nav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gcc">GCC</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="footer-copy">© Headventor Innovations. All rights reserved.</p>
   </div>
 </footer>
 
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
