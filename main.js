@@ -308,12 +308,6 @@ function initScrollAnimations() {
     opacity: 0, y: 30, stagger: 0.12, duration: 0.75, ease: 'power3.out',
   });
 
-  // Metrics
-  gsap.from('.metric-item', {
-    scrollTrigger: { trigger: '.metrics-band', start: 'top 85%' },
-    opacity: 0, y: 24, stagger: 0.1, duration: 0.7, ease: 'power3.out',
-  });
-
   // GCC heading
   gsap.from('.gcc-head', {
     scrollTrigger: { trigger: '.gcc-sec', start: 'top 82%' },
@@ -336,12 +330,6 @@ function initScrollAnimations() {
   gsap.from('.ap-step', {
     scrollTrigger: { trigger: '.approach-grid', start: 'top 85%' },
     opacity: 0, y: 36, stagger: 0.12, duration: 0.75, ease: 'power3.out',
-  });
-
-  // Testimonial
-  gsap.from('.testi-card', {
-    scrollTrigger: { trigger: '.testimonial-band', start: 'top 85%' },
-    opacity: 0, y: 32, duration: 0.85, ease: 'power3.out',
   });
 
   // CTA
